@@ -399,7 +399,7 @@ h6,
 .h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 h1,
@@ -12595,7 +12595,7 @@ textarea.form-control {
   letter-spacing: 2px;
   word-spacing: 3px;
   text-align: center;
-  opacity: .5;
+  opacity: .7;
 }
 
 .header .overlay .title {
