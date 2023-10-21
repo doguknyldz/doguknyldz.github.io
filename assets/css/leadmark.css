@@ -523,6 +523,12 @@ mark,
   height: auto;
 }
 
+.img-circular {
+  border-radius: 20%;
+  max-width: 100%;
+  height: auto;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -12913,9 +12919,15 @@ textarea.form-control {
   box-shadow: 0 15px 20px #0e141e80;
 }
 
+.skillcard .number h2 {
+  color: #fff;
+  font-size: 80%;
+}
+
 .skillcard .card:hover .number h2 {
   color: #fff;
-  font-size: 50px;
+  font-size: 100%;
+  transition: font-size 0.1s ease;
 }
 
 .skillcard .card:hover .number h2 span {
