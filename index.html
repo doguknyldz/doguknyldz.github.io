@@ -1,475 +1,898 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr" class="scroll-smooth">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/logo.svg" />
-    <title>Dogukan YILDIZ</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + LeadMark main styles -->
-    <link rel="stylesheet" href="assets/css/leadmark.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="icons/dogukn.svg" />
+    <title>Dogukan YILDIZ - Unity Game Developer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#7683F9',
+                        darkbg: '#0E141E',
+                        cardbg: '#172030'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0E141E;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            perspective: 1000px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front {
+            position: relative;
+            width: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background-color: #172030;
+            line-height: 0;
+        }
+
+        .flip-card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transform: rotateY(180deg);
+        }
+
+        .project-gif {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .grid-sizer,
+        .project-item {
+            width: 100%;
+        }
+
+        @media (min-width: 320px) {
+
+            .grid-sizer,
+            .project-item {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+
+            .grid-sizer,
+            .project-item {
+                width: 25%;
+            }
+        }
+
+        .flip-card-img {
+            pointer-events: none;
+        }
+
+        .filter-btn.active {
+            background-color: #7683F9;
+            font-weight: 700;
+            border-color: #7683F9;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Page Header -->
-    <header class="header">
-        <div class="overlay">
-            <a class="subtitle" href="https://github.com/doguknyldz" target="_blank">Senior Unity Game
-                Developer</a>
-            <a class="title" href="https://www.linkedin.com/in/doguknyldz/" target="_blank">DOGUKAN
-                YILDIZ
-            </a>
-            <h2 class=" minitext">Hey, I am a Computer Engineering student at Sakarya University.</h2>
-            <h2 class="minitext">I have experienced Unity Game Developer in PC, Android and IOS development for 4+
-                years.</h2>
-            <h2 class="minitext">I love game development. I am open to learning new things and improving myself.</h2>
-        </div>
-    </header>
+<body class="bg-darkbg text-gray-200 font-sans antialiased selection:bg-primary selection:text-white">
+    <section id="home" class="min-h-screen flex items-center justify-center pt-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
 
+            <h2 class="text-xl sm:text-2xl font-medium text-gray-400 mb-2 tracking-widest">
+                Unity Game Developer
+            </h2>
 
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-        <div class="container">
-            <h6 class="section-title text-center mb-5">My Skills</h6><br>
-            <!--  <h6 class="section-subtitle mb-5 text-center">asd</h6> -->
-            <div class="skillcard">
-                <div class="card align-items-center" title="Unity">
-                    <div class="box">
-                        <div class="percent">
-                            <div class="number"><img src="assets/imgs/unity.svg" class="img-fluid" alt="Unity">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="number">
-                        <h2>Unity</h2>
-                    </div>
-                </div>
-                <div class="card align-items-center" title="C# OOP & Optimization">
-                    <div class="box">
-                        <div class="percent">
-                            <div class="number"><img src="assets/imgs/cs.svg" class="img-fluid" alt="C#">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="number">
-                        <h2>C#</h2>
-                    </div>
-                </div>
-                <div class="card align-items-center" title="Blender">
-                    <div class="box">
-                        <div class="percent">
-                            <div class="number"><img src="assets/imgs/blender.svg" class="img-fluid" alt="Blender">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="number">
-                        <h2>Blender</h2>
-                    </div>
-                </div>
-                <div class="card align-items-center" title="Unity ShaderGraph">
-                    <div class="box">
-                        <div class="percent">
-                            <div class="number"><img src="assets/imgs/sg.svg" class="img-fluid" alt="ShaderGraph">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="number">
-                        <h2>ShaderGraph</h2>
-                    </div>
-                </div>
-                <div class="card align-items-center" title="Adobe Premier Pro">
-                    <div class="box">
-                        <div class="percent">
-                            <div class="number"><img src="assets/imgs/pr.svg" class="img-fluid" alt="Premier Pro">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="number">
-                        <h2>Premier Pro</h2>
-                    </div>
-                </div>
+            <h1
+                class="text-6xl sm:text-8xl font-extrabold tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400  to-blue-500">
+                DOGUKAN YILDIZ
+            </h1>
+
+            <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10 leading-relaxed">
+                6+ years of experience in game development, advanced C# and Shader Graph
+                skills, and strong knowledge of OOP, gameplay mechanics, and algorithms. Experienced in developing
+                performance-optimized PC and mobile games across Hyper-Casual, Casual, Puzzle, and Social Casino
+                (Slot/Poker) genres.
+            </p>
+
+            <!-- 
+            Unity Game Developer with 5 years of experience developing PC and mobile games across Hyper-Casual, Casual, Social Casino, and Puzzle genres. Strong expertise in C#, gameplay systems, Shader Graph, and performance optimization, with a solid understanding of game architecture, design patterns, and object-oriented programming. Experienced in developing UI systems and custom editor tools, with a focus on clean, maintainable code, scalable architectures, and efficient gameplay experiences.
+            -->
+
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/doguknyldz/" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-cardbg hover:bg-primary hover:text-darkbg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a><a href="https://github.com/doguknyldz" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-cardbg hover:bg-primary hover:text-darkbg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://play.google.com/store/apps/dev?id=4845506822821348672" target="_blank"
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-cardbg hover:bg-primary hover:text-darkbg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    <i class="fab fa-google-play text-xl"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio-section"><br>
-        <div class="container">
-            <h6 class="section-title text-center mb-4">My Portfolio</h6><br>
-            <!--  <h6 class="section-subtitle mb-5 text-center">asd</h6> -->
-            <div class="filters">
-                <a href="#" data-filter=".new" class="active">
-                    New
-                </a>
-                <a href="#" data-filter=".game">
-                    Games
-                </a>
-                <a href="#" data-filter=".prototype">
-                    Prototype
-                </a>
-                <a href="#" data-filter=".mechanic">
-                    Mechanic
-                </a>
+    <section id="skills" class="py-20 bg-cardbg/30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3
+                    class="text-3xl font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400  to-blue-500">
+                    MY SKILLS</h3>
+                <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded"></div>
             </div>
-            <div class="portfolio-container">
-                <!-- 
-                <div class="col-md-6 col-lg-4 new game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/test.gif" class="img-fluid" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href="assets/imgs/test.gif"></a>
-                            <div class="text-holder">
-                                <h6 class="title">REDITUM</h6>
-                                <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
-                                <button class="btn btn-primary rounded "><i
-                                        class="ti-android pr-1"></i>GooglePlay</button>
-                                <button class="btn btn-primary rounded"><i class="ti-apple pr-1"></i>AppStore</button>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <i class="fab fa-unity text-6xl mb-4 text-gray-300"></i>
+                    <span class="font-semibold text-lg">Unity 3D/2D</span>
                 </div>
-                -->
-                <div class="col-md-6 col-lg-3 new">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/reditum.jpg" class="img-fluid" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">REDITUM</h6>
-                                <p class="subtitle">My first PC project. I made all the design and code.</p>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://store.steampowered.com/app/1578710/REDITUM','_blank')"><i
-                                        class="ti-microsoft-alt pr-1"></i>Steam</button>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://youtu.be/gkiTzdPSThg','_blank')"><i
-                                        class="ti-youtube pr-1"></i>Youtube</button>
-                            </div>
-                        </div>
-                    </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <div class="text-5xl font-extrabold mb-4 text-gray-300">C#</div>
+                    <span class="font-semibold text-lg">C# Scripting</span>
                 </div>
-                <div class="col-md-6 col-lg-3 new mechanic">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/jewelry.gif" class="img-fluid" alt="Mechanic">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Jewelry</h6>
-                                <p class="subtitle">Cleaning rust and polishing material (Reflections and Lights)</p>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://youtu.be/m3BoP1Nhrbw','_blank')"><i
-                                        class="ti-youtube pr-1"></i>Youtube</button>
-                            </div>
-                        </div>
-                    </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <i class="fas fa-project-diagram text-5xl mb-4 text-gray-300"></i>
+                    <span class="font-semibold text-lg">Shader Graph</span>
                 </div>
-                <div class="col-md-6 col-lg-3 new mechanic">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/disintegration.gif" class="img-fluid" alt="Mechanic">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Disintegration</h6>
-                                <p class="subtitle">Random noise disintegration and merge shader</p>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://youtu.be/OozsdD8t5-A','_blank')"><i
-                                        class="ti-youtube pr-1"></i>Youtube</button>
-                            </div>
-                        </div>
-                    </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <i class="fas fa-mobile-alt text-5xl mb-4 text-gray-300"></i>
+                    <span class="font-semibold text-lg">Mobile Opt.</span>
                 </div>
-                <div class="col-md-6 col-lg-3 new prototype">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/rope.gif" class="img-fluid" alt="Prototype">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Burst Rope Simulation</h6>
-                                <p class="subtitle">Physics and Mesh Simulation with Unity Burst & Spline</p>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://github.com/doguknyldz/Burst-Rope','_blank')"><i
-                                        class="ti-github pr-1"></i>Github</button>
-                            </div>
-                        </div>
-                    </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <i class="fas fa-cogs text-5xl mb-4 text-gray-300"></i>
+                    <span class="font-semibold text-lg">Game Mechanics</span>
                 </div>
-                <div class="col-md-6 col-lg-3 new prototype">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/hydrodipping.gif" class="img-fluid" alt="Prototype">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Hydro Dipping</h6>
-                                <p class="subtitle">Drawing the shape in the water on the model</p>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://youtu.be/1YxXh_mq0Fw','_blank')"><i
-                                        class="ti-youtube pr-1"></i>Youtube</button>
-                            </div>
-                        </div>
-                    </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <i class="fab fa-git-alt text-6xl mb-4 text-gray-300"></i>
+                    <span class="font-semibold text-lg">Git / Versioning</span>
                 </div>
-                <div class="col-md-6 col-lg-3 new prototype">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/marbling.gif" class="img-fluid" alt="Prototype">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Marbling</h6>
-                                <p class="subtitle">Drawing the shape in the water on the model</p>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://youtu.be/MIkG6NGln64','_blank')"><i
-                                        class="ti-youtube pr-1"></i>Youtube</button>
-                            </div>
-                        </div>
-                    </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <i class="fas fa-cube text-5xl mb-4 text-gray-300"></i>
+                    <span class="font-semibold text-lg">Algorithms</span>
                 </div>
-                <div class="col-md-6 col-lg-3 new mechanic">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/blaster.gif" class="img-fluid" alt="Mechanic">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Blaster</h6>
-                                <p class="subtitle">Runner Project, Physics Optimization</p>
-                            </div>
-                        </div>
-                    </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-6 bg-cardbg rounded-2xl shadow-lg border border-gray-700/50 hover:border-primary/50 transition-colors">
+                    <i class="fas fa-bolt text-5xl mb-4 text-gray-300"></i>
+                    <span class="font-semibold text-lg">Prototyping</span>
                 </div>
-                <div class="col-md-6 col-lg-3 new mechanic">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/pickle.gif" class="img-fluid" alt="Mechanic">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Pickle</h6>
-                                <p class="subtitle">He's turning himself into a pickle, the funniest shit I've ever
-                                    seen.
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="text-center mb-16">
+            <h3
+                class="text-3xl font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400  to-blue-500">
+                PORTFOLIO</h3>
+            <div class="w-16 h-1 bg-primary mx-auto mt-4 rounded"></div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-3 mb-12 filters-button-group">
+                <button
+                    class="filter-btn active px-6 py-2 rounded-full border border-gray-600 text-sm font-medium transition-colors"
+                    data-filter=".all">ALL</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-gray-600 hover:bg-primary/20 text-sm font-medium transition-colors"
+                    data-filter=".games">GAMES</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-gray-600 hover:bg-primary/20 text-sm font-medium transition-colors"
+                    data-filter=".prototype">PROTOTYPE</button>
+                <button
+                    class="filter-btn px-6 py-2 rounded-full border border-gray-600 hover:bg-primary/20 text-sm font-medium transition-colors"
+                    data-filter=".mechanic">MECHANIC</button>
+            </div>
+
+            <div id="grid-loader"
+                class="relative inset-0 flex flex-col items-center justify-center z-10 transition-opacity duration-500">
+                <i class="fas fa-circle-notch fa-spin text-5xl text-primary mb-4"></i>
+                <span class="text-sm tracking-widest text-primary">wait for it...</span>
+            </div>
+
+            <div class="isotope-grid -mx-3 opacity-0 transition-opacity duration-1000">
+                <div class="grid-sizer px-3"></div>
+
+                <div class="project-item all px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/reditum.jpg" class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/reditum.jpg"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">REDITUM</h4>
+                                <p class="text-lg font-medium mb-12">My first PC project. I made all the design and
+                                    code.
                                 </p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://store.steampowered.com/app/1578710/REDITUM" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-steam"></i></a>
+                                    <a href="https://youtu.be/gkiTzdPSThg" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-youtube"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 new mechanic">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/leaf.gif" class="img-fluid" alt="Mechanic">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Leafs</h6>
-                                <p class="subtitle">Idle Project, Object Pooling</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 new mechanic">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/ship.gif" class="img-fluid" alt="Mechanic">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Ship</h6>
-                                <p class="subtitle">Curve Project, Procedural World Generation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 new mechanic">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/ants.gif" class="img-fluid" alt="Mechanic">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Ants</h6>
-                                <p class="subtitle">Pathfinding and Grass Shader</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 new game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/reditumicon.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">REDITUM</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://store.steampowered.com/app/1578710/REDITUM','_blank')"><i
-                                        class="ti-microsoft-alt pr-1"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 new game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/racing.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Traffic Racing</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/tr/app/traffic-racing/id6468029463','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 new game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/foodrush.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Food Rush</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/tr/app/food-rush/id6444596818','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 new game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/tumbler.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Tumbler DIY</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://play.google.com/store/apps/details?id=com.izmirgames.snowglobetumblerdiy','_blank')"><i
-                                        class="ti-android pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/royalrush.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Royal Rush</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/tr/app/royal-rush/id6450372267','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/jewelry.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Jewelry Repair Shop</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/app/jewelry-repair-shop/id1661288797','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 new game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/garage.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Idle Garage</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/tr/app/idle-garage-car-repair-tycoon/id6447436220','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/robot.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Robot Clicker</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/tr/app/robot-clicker/id6443661081','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/veggie.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Veggie Grater</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/tr/app/veggie-grater/id1632235052','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/taco.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Taco Empire</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/tr/app/taco-empire/id1634571276','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 game">
-                    <div class="portfolio-item">
-                        <img src="assets/imgs/champion.png" class="img-circular" alt="Game">
-                        <div class="content-holder">
-                            <a class="img-popup" href=""></a>
-                            <div class="text-holder">
-                                <h6 class="title">Build a Champion</h6>
-                                <button class="btn btn-primary rounded"
-                                    onclick=" window.open('https://apps.apple.com/us/app/build-a-champion/id1660938858','_blank')"><i
-                                        class="ti-apple pr-1"></i></button </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4 text-right">
-                    <h6 class="mb-0">Phone</h6>
-                    <a class="mb-4" href="https://api.whatsapp.com/send?phone=905534904248" target="_blank">+90 553 490
-                        4248</a>
+                <div class="project-item all prototype px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/rope.gif" class="project-gif "></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/rope.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Burst Rope Simulation</h4>
+                                <p class="text-lg font-medium mb-12">Physics and Mesh Simulation with Unity Burst &
+                                    Spline
+                                </p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://github.com/doguknyldz/Burst-Rope" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-github"></i></a>
+                                    <a href="https://youtu.be/MFIEPZq_bCc" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <h6 class="mb-0">Address</h6>
-                    <a class="mb-4" href="https://www.google.com/maps/place/Ankara/" target="_blank">Ankara,
-                        Turkey</a>
+
+                <div class="project-item all mechanic px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/jewelry.gif" class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/jewelry.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Jewelry</h4>
+                                <p class="text-lg font-medium mb-12">Cleaning rust and polishing material (Reflections
+                                    and
+                                    Lights)</p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://youtu.be/m3BoP1Nhrbw" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 text-left">
-                    <h6 class="mb-0">Email</h6>
-                    <a class="mb-4" href="mailto:dgknyldz84@gmail.com">dgknyldz84@gmail.com</a>
+
+                <div class="project-item all mechanic px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/disintegration.gif"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/disintegration.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Disintegration</h4>
+                                <p class="text-lg font-medium mb-12">Random noise disintegration and merge shader</p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://youtu.be/OozsdD8t5-A" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all prototype px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/marbling.gif" class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/marbling.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Marbling</h4>
+                                <p class="text-lg font-medium mb-12">Drawing the shape in the water on the model</p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://youtu.be/MIkG6NGln64" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="project-item all prototype px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/hydrodipping.gif" class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/hydrodipping.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Hydro Dipping</h4>
+                                <p class="text-lg font-medium mb-12">Drawing the shape in the water on the model</p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://youtu.be/1YxXh_mq0Fw" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item mechanic px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/blaster.gif" class="project-gif ">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/blaster.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Blaster</h4>
+                                <p class="text-lg font-medium mb-12">Runner Project, Physics Optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all mechanic px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/pickle.gif" class="project-gif ">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/pickle.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Pickle</h4>
+                                <p class="text-lg font-medium mb-12">He's turning himself into a pickle, the funniest
+                                    shit
+                                    I've ever seen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all mechanic px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/leaf.gif" class="project-gif "></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/leaf.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Leafs</h4>
+                                <p class="text-lg font-medium mb-12">Idle Project, Object Pooling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item mechanic px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/ants.gif" class="project-gif "></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/ants.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Ants</h4>
+                                <p class="text-lg font-medium mb-12">Pathfinding and Grass Shader</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item mechanic px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="gifs/ship.gif" class="project-gif "></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="gifs/ship.gif"
+                                    class="w-full h-full object-cover absolute opacity-15 mix-blend-overlay flip-card-img -scale-x-100">
+                                <h4 class="text-2xl font-bold mb-8">Ship</h4>
+                                <p class="text-lg font-medium mb-12">Curve Project, Procedural World Generation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front bg-cardbg"><img src="icons/reditum.png" class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/reditum.png"
+                                    class="w-full h-full object-cover absolute opacity-25 mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://store.steampowered.com/app/1578710/REDITUM" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-steam"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">REDITUM</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/slotcat.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/slotcat.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://apps.apple.com/us/app/slotcat-casino-slots/id6511232897"
+                                        target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-apple"></i></a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.hungames.slotcat"
+                                        target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-google-play"></i></a>
+                                </div>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Slotcat</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/poker.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/poker.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://apps.apple.com/us/app/holdem-all-texas-omaha-poker/id6747926810"
+                                        target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-apple"></i></a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.hungames.poker"
+                                        target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-google-play"></i></a>
+                                </div>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Hold'em Poker</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/vipslot.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/vipslot.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://play.google.com/store/apps/details?id=com.ebstar.slot&pcampaignid=web_share"
+                                        target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-google-play"></i></a>
+                                </div>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">VIP Slot</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/foodrush.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/foodrush.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/tr/app/food-rush/id6444596818" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Food Rush</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/hunikapuzzle.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/hunikapuzzle.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://apps.apple.com/tr/app/hunika-puzzle/id6479897870" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-apple"></i></a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.hungames.puzzle"
+                                        target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-google-play"></i></a>
+                                </div>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Hunika Puzzle</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/hunikapaint.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/hunikapaint.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <div class="flex flex-wrap justify-center gap-2 mb-2">
+                                    <a href="https://apps.apple.com/tr/app/hunika-paint/id6498920460" target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-apple"></i></a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.hungames.paint"
+                                        target="_blank"
+                                        class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-2xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                            class="fab fa-google-play"></i></a>
+                                </div>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Hunika Paint</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/racing.png"
+                                    class="project-gif"></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/racing.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/tr/app/traffic-racing/id6468029463" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Traffic Racing</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item all games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/tumbler.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/tumbler.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://play.google.com/store/apps/details?id=com.izmirgames.snowglobetumblerdiy"
+                                    target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-google-play"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Tumbler DIY</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/royalrush.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/royalrush.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/tr/app/royal-rush/id6450372267" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Royal Rush</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/jewelry.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/jewelry.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/app/jewelry-repair-shop/id1661288797" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Jewelry Repair Shop</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/garage.png"
+                                    class="project-gif"></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/garage.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/tr/app/idle-garage-car-repair-tycoon/id6447436220"
+                                    target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Idle Garage</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/robot.png"
+                                    class="project-gif"></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/robot.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/tr/app/robot-clicker/id6443661081" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Robot Clicker</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/zombie.png"
+                                    class="project-gif"></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/zombie.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://play.google.com/store/apps/details?id=com.ebstar.zombiedrifting"
+                                    target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-google-play"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Zombie Drifting</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/veggie.png"
+                                    class="project-gif"></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/veggie.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/tr/app/veggie-grater/id1632235052" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Veggie Grater</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/taco.png"
+                                    class="project-gif"></div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/taco.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/tr/app/taco-empire/id1634571276" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Taco Empire</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item games px-3 mb-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner shadow-lg">
+                            <div class="flip-card-front rounded-[2vw] bg-cardbg"><img src="icons/champion.png"
+                                    class="project-gif">
+                            </div>
+                            <div
+                                class="flip-card-back bg-gradient-to-br text-white flex flex-col items-center justify-center p-6 text-center">
+                                <img src="icons/champion.png"
+                                    class="w-full h-full object-cover absolute opacity-25 rounded-[2vw] mix-blend-overlay flip-card-img -scale-x-100">
+                                <a href="https://apps.apple.com/us/app/build-a-champion/id1660938858" target="_blank"
+                                    class="px-4 py-2 bg-gray-800 rounded-full border border-primary text-3xl font-bold hover:bg-primary transition-colors text-white shadow-lg"><i
+                                        class="fab fa-apple"></i></a>
+                                <h4 class="text-2xl font-bold mb-4 mt-4">Build a Champion</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
-    <script src="assets/js/leadmark.js"></script>
+    <footer class="bg-cardbg/30 border-t border-gray-800 py-4">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center text-white">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <a class="font-semibold hover:text-primary" href="https://www.google.com/maps/place/Sakarya/"
+                            target="_blank">Sakarya, Türkiye</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center text-white">
+                        <i class="fas fa-phone text-xl"></i>
+                    </div>
+                    <div>
+                        <a class="font-semibold hover:text-primary"
+                            href="https://api.whatsapp.com/send?phone=905534904248" target="_blank">+90 (553) 490 42
+                            48</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 flex items-center justify-center text-white">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                    <div>
+                        <a class="font-semibold hover:text-primary" href="mailto:dgknyldz84@gmail.com"
+                            target="_blank">dgknyldz84@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.querySelector('.isotope-grid');
+            const loader = document.getElementById('grid-loader');
+            let iso;
+
+            imagesLoaded(grid, function () {
+                iso = new Isotope(grid, {
+                    itemSelector: '.project-item',
+                    filter: ".all",
+                    percentPosition: true,
+                    layoutMode: 'masonry',
+                    masonry: {
+                        columnWidth: '.grid-sizer'
+                    }
+                });
+
+                grid.classList.remove('opacity-0');
+                loader.classList.add('opacity-0');
+                loader.style.display = 'none';
+            });
+
+            const filtersElem = document.querySelector('.filters-button-group');
+            filtersElem.addEventListener('click', function (event) {
+                if (!event.target.matches('button')) {
+                    return;
+                }
+
+                const filterValue = event.target.getAttribute('data-filter');
+                iso.arrange({ filter: filterValue });
+
+                const btns = filtersElem.querySelectorAll('.filter-btn');
+                btns.forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 
